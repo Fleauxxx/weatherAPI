@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+} 
+
+body {
+    background-color: lightblue;
+}
+
+
+.header {
+    display: flex;
+    background-color: blue;
+    height: 80px;
+    color: azure;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstContainer {
+    display: flex;
+    justify-content: space-between;
+
+    
+    
+}
+
+.searchcontainer {
+    height: 150px;
+    border-bottom: 2px solid gray;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-left: 5px;
+
+}
+
+#searchBtn {
+    color: white;
+    background-color: blue;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+#cityContainer {
+    border: 2px solid black;
+    width: 75%;
+    height: 200px;
+    margin: 5px 5px;
+}
+
+.side {
+    display: flex;
+    width: 65%;
+    justify-content: center;
+    margin-left: 3px;
+}
+
+.secondContainer {
+    border: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    height: 650px;
+}
+
+#forecast {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+    width: 80%;
+    height: 100vh;
+    margin: 5px;
+    
+}
+
+.card {
+    height: 200px;
+    width: 18%;
+    background-color: rgb(41, 41, 145);
+    color: white;
+    margin: 5px;
+
+}
