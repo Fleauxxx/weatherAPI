@@ -79,6 +79,7 @@ body {
 }
 
 .card {
+    display: flex;
     height: 200px;
     width: 18%;
     background-color: rgb(41, 41, 145);

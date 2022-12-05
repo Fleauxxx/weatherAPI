@@ -7,6 +7,8 @@ var day2 = document.getElementById("two");
 var day3 = document.getElementById("three");
 var day4 = document.getElementById("four");
 var day5 = document.getElementById("five");
+const cityName = localStorage.getItem("city")
+const cityList = document.getElementById("cityList");
 
 
 function getApi() {
@@ -18,8 +20,22 @@ function getApi() {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.list[1].dt);
-      console.log(data.list[1].weather[0].icon);
+      console.log(data.list[1].dt_txt);
+      localStorage.setItem(city.value, city.value);
+      // localStorage.getItem(city.value)
+      console.log(localStorage.getItem(city.value))
+      var pastCity = document.createElement("h3");
+      pastCity.setAttribute("class", "pastCity");
+      pastCity.textContent = localStorage.getItem(city.value);
+      cityList.appendChild(pastCity);
+      day1.textContent = "";
+      day2.textContent = "";
+      day3.textContent = "";
+      day4.textContent = "";
+      day5.textContent = "";
+      
+
+
 
      
         var iconCode = data.list[0].weather[0].icon;
@@ -28,6 +44,7 @@ function getApi() {
         var listTemp = document.createElement("p");
         var listHumid = document.createElement("p");
         var listWind = document.createElement("p");
+        const date = document.createElement('p');
         
         var iconCode2 = data.list[1].weather[0].icon;
         var iconUrl2 = "http://openweathermap.org/img/wn/" + iconCode2 + "@2x.png";
@@ -62,11 +79,13 @@ function getApi() {
         listTemp.textContent = " Temp " + data.list[0].main.temp + " deg ";
         listHumid.textContent = " Humidity " + data.list[0].main.humidity + " % ";
         listWind.textContent = " Wind " + data.list[0].wind.speed + " mph ";
+        date.textContent = data.list[0].dt_txt;
         
         day1.appendChild(listIcon);
         day1.appendChild(listTemp);
         day1.appendChild(listHumid);
         day1.appendChild(listWind);
+        day1.appendChild(date);
 
         listIcon2.setAttribute("src" , iconUrl2);
         listIcon2.textContent = data.list[1].weather[0].icon;
@@ -113,10 +132,20 @@ function getApi() {
         day5.appendChild(listHumid5);
         day5.appendChild(listWind5);
 
+    
+
 
       // }
     });
 }
 
 
+function reload() {
+  console.log("It worked.");
+  
+};
+
+
 searchBtn.addEventListener("click", getApi);
+// pastCity.addEventListener("click", reload);
+
