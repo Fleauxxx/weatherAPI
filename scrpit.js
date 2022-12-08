@@ -21,7 +21,7 @@ function getApi() {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.list[1].dt_txt);
+      console.log(data.list[1].dt);
       // persisting the data of cities that have been searched.
       localStorage.setItem(city.value, city.value);
       console.log(localStorage.getItem(city.value));
@@ -144,11 +144,13 @@ function getApi() {
 
       // }
     });
-}
+};
 
 function reload() {
   console.log("It worked.");
-}
+};
+
+contain.textContent = moment().format('l');
 
 searchBtn.addEventListener("click", getApi);
 // pastCity.addEventListener("click", reload);
